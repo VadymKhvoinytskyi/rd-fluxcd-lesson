@@ -1,0 +1,21 @@
+resources:
+- ../../base
+
+
+namespace: flux-prod
+
+patches:
+- path: deployment.yaml
+  target:
+    kind: Deployment
+    name: course-app
+
+
+namePrefix: prod-
+
+
+configMapGenerator:
+- name: test-config
+  behavior: merge
+  files:
+  -  application.properties

@@ -1,0 +1,24 @@
+resources:
+- ../../base
+
+
+namespace: flux-dev
+
+patches:
+- path: deployment.yaml
+  target:
+    kind: Deployment
+    name: course-app
+- target:
+    kind: Ingress
+    name: course-app-ingress
+  path: ingress.json
+
+namePrefix: dev-
+
+
+configMapGenerator:
+- name: test-config
+  behavior: merge
+  files:
+  -  application.properties
