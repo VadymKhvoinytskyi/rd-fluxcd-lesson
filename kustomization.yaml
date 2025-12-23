@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: course-app
+  name: rd-fluxcd-lesson
   namespace: default
 spec:
   interval: 5m
@@ -13,13 +13,13 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: course-app-dev
-  namespace: flux-dev
+  namespace: default
 spec:
   interval: 10m
   targetNamespace: default
   sourceRef:
     kind: GitRepository
     name: rd-fluxcd-lesson
-  path: ".overlays/dev/"
+  path: "./overlays/dev/"
   prune: true
   timeout: 1m
