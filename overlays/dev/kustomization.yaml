@@ -2,7 +2,7 @@ resources:
 - ../../base
 
 
-namespace: flux-dev
+namespace: development
 
 patches:
 - path: deployment.yaml

@@ -1,17 +1,12 @@
 resources:
 - ../../base
-
-
-namespace: flux-prod
+namespace: production
 
 patches:
 - path: deployment.yaml
   target:
     kind: Deployment
     name: course-app
-
-
-namePrefix: prod-
 
 
 configMapGenerator:
