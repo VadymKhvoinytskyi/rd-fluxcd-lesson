@@ -2,7 +2,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: app-prod
-  namespace: flux-system
+  namespace: rd-fluxcd-lesson
 spec:
   interval: 1m
   path: ./overlays/production
